@@ -91,4 +91,4 @@ sudo apt install jenkins
 ## Now go to a web browser and visit the web interface
 ```http://localhost:8080```
 
-## Log in 
+## Follow the instruction on the screen to Log in 
