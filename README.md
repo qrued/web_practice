@@ -3,7 +3,7 @@
 ## Prerequisites
 To follow this tutorial, you will need:
 
-- One Ubuntu 20.04 server set up by following the [Ubuntu 20.04 initial server setup guide](link-to-setup-guide) tutorial, including a sudo non-root user and a firewall.
+- One Ubuntu 20.04 server set up by following the [Ubuntu 20.04 initial server setup guide](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-20-04) tutorial, including a sudo non-root user and a firewall.
 
 ## Installing the Default JRE/JDK
 The easiest option for installing Java is to use the version packaged with Ubuntu. By default, Ubuntu 20.04 includes Open JDK 11, which is an open-source variant of the JRE and JDK.
