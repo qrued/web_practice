@@ -69,24 +69,49 @@ The easiest option for installing Java is to use the version packaged with Ubunt
     ```
     javac 11.0.11
     ```
-** Note that some details may vary due to your current version of ubuntu
+7. Now let's set the envionmental variable fo java
+   ```
+   echo 'JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"' >> /etc/environment
+   source /etc/environment
+   ```
+    
+**Note that some details may vary due to your current version of ubuntu**
 
 
 
 # Install Jenkins
 
-# Add the Jenkins repository key to your system
-```wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -```
+# Add the Jenkins apt repository key to your system
+```
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+    /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+```
 
-# Add the Jenkins repository to your system
-```echo "deb https://pkg.jenkins.io/debian-stable binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list```
+# Add a Jenkins apt repository entry
+```
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+    https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+    /etc/apt/sources.list.d/jenkins.list > /dev/null
+```
 
 # Update package repository again
-```sudo apt update```
+```
+sudo apt update
+```
+# Install FontConFig and openjdk-11
+
+```
+apt install fontconfig openjdk-11-jre
+```
 
 # Install Jenkins
+
+```
 sudo apt install jenkins
-```sudo systemctl start jenkins && sudo systemctl enable jenkins```
+```
+```
+sudo systemctl start jenkins && sudo systemctl enable jenkins
+```
 
 ## Now go to a web browser and visit the web interface
 ```http://localhost:8080```
